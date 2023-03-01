@@ -1,5 +1,6 @@
 {
   "author": {"name": "Milin Mestry"},
+  "description": "Freecodecamp expressJS API learning",
 	"name": "fcc-learn-npm-package-json",
 	"dependencies": {
 		"express": "^4.14.0"
