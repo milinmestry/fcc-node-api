@@ -10,7 +10,7 @@
 	},
 	"main": "server.js",
 	"scripts": {
-		"start": "node myApp.js"
+		"start": "node server.js"
 	},
 	"repository": {
 		"type": "git",
