@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+let myApp = require('./myApp');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -32,7 +33,7 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
-  
+
 app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
@@ -50,7 +51,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500)
       .type('txt')
       .send(err.message || 'SERVER ERROR');
-  }  
+  }
 })
 
 //Listen on port set in environment variable or default to 3000
