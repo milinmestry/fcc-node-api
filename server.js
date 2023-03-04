@@ -39,7 +39,8 @@ app.route('/')
     })
 
 // let myApp = require('./myApp');
-app.use('/hello', require('./myApp'));
+// app.use('/hello', require('./myApp'));
+app.use('/_api/hello-console', require('./myApp'));
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
