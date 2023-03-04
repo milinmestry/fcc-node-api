@@ -1,9 +1,10 @@
 let express = require('express');
-let app = express();
+// let app = express();
+const router = express.Router();
 
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
   res.send('Hello Express!!');
   console.log('Hello World');
 });
 
-module.exports = app;
+module.exports = router;

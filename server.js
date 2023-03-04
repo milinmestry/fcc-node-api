@@ -38,10 +38,13 @@ app.route('/')
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
 
+// let myApp = require('./myApp');
+app.use('/hello', require('./myApp'));
+
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
   res.status(404);
-  res.type('txt').send('Not found');
+  res.type('txt').send('Page Not found');
 });
 
 // Error Middleware
@@ -53,8 +56,7 @@ app.use(function(err, req, res, next) {
   }
 })
 
-let myApp = require('./myApp');
-app.use('/hello', myApp);
+
 
 //Listen on port set in environment variable or default to 3000
 const listener = app.listen(process.env.PORT || 3000, function () {
